@@ -2,7 +2,7 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 //Read (GET) all contacts in the database
-const getAllData = async (req, res, next) => {
+const getAllData = async (req, res) => {
     try {
         const result = await mongodb
             .getDatabase()
@@ -18,7 +18,7 @@ const getAllData = async (req, res, next) => {
 };
 
 //Read (GET) one contact (based on Id) in the database
-const getSingleData = async (req, res, next) => {
+const getSingleData = async (req, res) => {
     try {
         const UserId = new ObjectId(req.params.id);
         const result = await mongodb
