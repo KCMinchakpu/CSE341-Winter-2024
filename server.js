@@ -8,7 +8,7 @@ const port = process.env.port || 3000;
 app.use('/', require('./routes'));
 
 
-mongodb.initDb((err, mongodb) => {
+mongodb.initDb((err) => {
     if (err) {
         console.log(err);
     } else {
