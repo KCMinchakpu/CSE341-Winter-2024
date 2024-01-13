@@ -8,9 +8,9 @@ const getAllData = async (req, res) => {
             .getDatabase()
             .collection('contacts')
             .find();
-        result.toArray().then((lists) => {
+        result.toArray().then((contacts) => {
             res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(lists);
+            res.status(200).json(contacts);
         });
     } catch (err) {
         res.status(500).json(err);
@@ -25,9 +25,9 @@ const getSingleData = async (req, res) => {
             .getDatabase()
             .collection('contacts')
             .find({ _id: UserId});
-        result.toArray().then((lists) => {
+        result.toArray().then((contacts) => {
             res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(lists[0]);
+            res.status(200).json(contacts[0]);
         });
     } catch (err) {
         res.status(500).json(err);
