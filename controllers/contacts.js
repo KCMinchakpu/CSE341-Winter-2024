@@ -34,8 +34,6 @@ const getSingleData = async (req, res) => {
     }
 };
 
-
-
 module.exports = { 
     getAllData, 
     getSingleData
