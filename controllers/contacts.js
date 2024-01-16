@@ -6,11 +6,12 @@ const getAllData = async (req, res) => {
     try {
         const result = await mongodb
             .getDatabase()
+            .database('project1')
             .collection('contacts')
             .find();
-        result.toArray().then((contacts) => {
+        result.toArray().then((list) => {
             res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(contacts);
+            res.status(200).json(list);
         });
     } catch (err) {
         res.status(500).json(err);
@@ -23,11 +24,12 @@ const getSingleData = async (req, res) => {
         const UserId = new ObjectId(req.params.id);
         const result = await mongodb
             .getDatabase()
+            .database('project1')
             .collection('contacts')
             .find({ _id: UserId});
-        result.toArray().then((contacts) => {
+        result.toArray().then((list) => {
             res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(contacts[0]);
+            res.status(200).json(list[0]);
         });
     } catch (err) {
         res.status(500).json(err);
