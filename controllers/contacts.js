@@ -5,7 +5,6 @@ const ObjectId = require('mongodb').ObjectId;
 const getAllData = async (req, res) => {
     try {
         const result = await mongodb
-            .getDatabase()
             .database('project1')
             .collection('contacts')
             .find();
@@ -23,7 +22,6 @@ const getSingleData = async (req, res) => {
     try {
         const UserId = new ObjectId(req.params.id);
         const result = await mongodb
-            .getDatabase()
             .database('project1')
             .collection('contacts')
             .find({ _id: UserId});
