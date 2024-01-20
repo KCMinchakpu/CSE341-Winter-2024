@@ -9,6 +9,10 @@
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KCMinchakpu/CSE341-Winter-2024"
+  },
   "keywords": [],
   "author": "Kevin Cross Minchakpu",
   "license": "ISC",
